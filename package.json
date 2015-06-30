@@ -1,0 +1,24 @@
+{
+  "name": "webtask-tools",
+  "version": "1.0.0",
+  "description": "Tools to facilitate working in a webtask context",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/auth0/webtask-tools.git"
+  },
+  "keywords": [
+    "webtask",
+    "auth0",
+    "server"
+  ],
+  "author": "Geoff Goodman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/auth0/webtask-tools/issues"
+  },
+  "homepage": "https://github.com/auth0/webtask-tools#readme"
+}
