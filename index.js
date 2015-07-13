@@ -31,7 +31,7 @@ function getTask (name, container, base_url) {
 
     return {
         url: url,
-        run: function(ctx, opts) {
+        run: function(ctx, args, opts) {
             if(!opts) opts = {};
 
             return new Promise(function (resolve, reject) {
@@ -40,7 +40,7 @@ function getTask (name, container, base_url) {
                     method: opts.method || 'POST',
                     json:   opts.json   || true,
                     query:  opts.query,
-                    body:   opts.body
+                    body:   args
 
                 }, function (err, res, body) {
                     if(err) return reject(err);
