@@ -82,3 +82,29 @@ with the 3-argument webtask signature:
 ```javascript
 function (context, req, res) {}
 ```
+
+## Runner.getTask(name, container, [base_url])
+
+Returns an object containing a url and a function to run the webtask:
+
+```javascript
+{
+    url: ...,
+    run: function (ctx, [opts]) {}
+}
+```
+
+Example:
+
+```javascript
+var myTask = getTask('my-task', 'sandbox-1');
+
+var args = {
+  foo: 'bar'
+}
+
+myTask
+    .run(ctx, args)
+    .then(function (res, body) {  })
+    .catch(function (err) {})
+```
