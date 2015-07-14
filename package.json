@@ -1,6 +1,6 @@
 {
   "name": "webtask-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tools to facilitate working in a webtask context",
   "main": "index.js",
   "scripts": {

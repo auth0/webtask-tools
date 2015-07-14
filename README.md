@@ -71,6 +71,9 @@ with the 3-argument webtask signature:
 function (context, req, res) {}
 ```
 
+The webtask `context` object will be available as `req.webtaskContext` from
+within route handlers.
+
 
 ## Runner.fromServer(httpServer)
 
@@ -82,3 +85,18 @@ with the 3-argument webtask signature:
 ```javascript
 function (context, req, res) {}
 ```
+
+The webtask `context` object will be available as `req.webtaskContext` from
+within route handlers.
+
+## Runner.fromHapi(hapiServer)
+
+Returns a function that will inject a single request into the supplied server
+with the 3-argument webtask signature:
+
+```javascript
+function (context, req, res) {}
+```
+
+The webtask `context` object will be available as `request.webtaskContext` from
+within route handlers.
