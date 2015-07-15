@@ -2,7 +2,7 @@ var normalizeRouteRx = /^\/api\/run\/[^\/]+\/(?:[^\/\?#]*\/?)?/;
 
 function fromConnect (connectFn) {
     return function (context, req, res) {
-        req.url = req.url.replace(normalizeRouteRx, '');
+        req.url = req.url.replace(normalizeRouteRx, '/');
         req.webtaskContext = context;
         
         return connectFn(req, res);
