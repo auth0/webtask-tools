@@ -55,7 +55,7 @@ server.del('/', function (req, res) {
 
 // Expose this express server as a webtask-compatible function
 
-module.exports = Webtask.fromExpress(app);
+module.exports = Webtask.fromExpress(server);
 ```
 
 # API
