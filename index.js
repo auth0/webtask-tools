@@ -1,6 +1,6 @@
 function fromConnect (connectFn) {
     return function (context, req, res) {
-        var normalizeRouteRx = createRouteNormalizationRx(req.query.webtask_jtn);
+        var normalizeRouteRx = createRouteNormalizationRx(req.x_wt.jtn);
         
         req.url = req.url.replace(normalizeRouteRx, '/');
         req.webtaskContext = context;
@@ -13,7 +13,7 @@ function fromHapi (server) {
     var webtaskContext;
     
     server.ext('onRequest', function (request, response) {
-        var normalizeRouteRx = createRouteNormalizationRx(request.query.webtask_jtn);
+        var normalizeRouteRx = createRouteNormalizationRx(request.x_wt.jtn);
         
         request.setUrl(request.url.replace(normalizeRouteRx, '/'));
         request.webtaskContext = webtaskContext;
@@ -30,7 +30,7 @@ function fromHapi (server) {
 
 function fromServer (httpServer) {
     return function (context, req, res) {
-        var normalizeRouteRx = createRouteNormalizationRx(req.query.webtask_jtn);
+        var normalizeRouteRx = createRouteNormalizationRx(req.x_wt.jtn);
         
         req.url = req.url.replace(normalizeRouteRx, '/');
         req.webtaskContext = context;
