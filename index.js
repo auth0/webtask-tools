@@ -2,6 +2,7 @@ function fromConnect (connectFn) {
     return function (context, req, res) {
         var normalizeRouteRx = createRouteNormalizationRx(req.x_wt.jtn);
         
+        req.originalUrl = req.url;
         req.url = req.url.replace(normalizeRouteRx, '/');
         req.webtaskContext = context;
         
@@ -32,6 +33,7 @@ function fromServer (httpServer) {
     return function (context, req, res) {
         var normalizeRouteRx = createRouteNormalizationRx(req.x_wt.jtn);
         
+        req.originalUrl = req.url;
         req.url = req.url.replace(normalizeRouteRx, '/');
         req.webtaskContext = context;
         
