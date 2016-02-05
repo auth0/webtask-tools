@@ -65,22 +65,27 @@ function createRouteNormalizationRx(jtn) {
 
 function attachStorageHelpers(context) {
     context.read = context.secrets.EXT_STORAGE_URL
-        ?   readPath
+        ?   readFromPath
         :   readNotAvailable;
     context.read = context.secrets.EXT_STORAGE_URL
-        ?   writePath
+        ?   writeToPath
         :   writeNotAvailable;
     
+    return context;
+    
+    
     function readNotAvailable(path, options, cb) {
+        var Boom = require('boom');
+
         if (typeof options === 'function') {
             cb = options;
             options = {};
         }
         
-        cb(new Error('Storage is not available in this context'));
+        cb(Boom.preconditionFailed('Storage is not available in this context'));
     }
     
-    function readPath(path, options, cb) {
+    function readFromPath(path, options, cb) {
         var Boom = require('boom');
         var Request = require('request');
         
@@ -96,6 +101,7 @@ function attachStorageHelpers(context) {
             json: true,
         }, function (err, res, body) {
             if (err) return cb(Boom.wrap(err, 502));
+            if (res.statusCode === 404 && Object.hasOwnProperty.call(options, 'defaultValue')) return cb(null, options.defaultValue);
             if (res.statusCode >= 400) return cb(Boom.create(res.statusCode, body && body.message));
             
             res(null, body);
@@ -103,15 +109,17 @@ function attachStorageHelpers(context) {
     }
     
     function writeNotAvailable(path, data, options, cb) {
+        var Boom = require('boom');
+
         if (typeof options === 'function') {
             cb = options;
             options = {};
         }
         
-        cb(new Error('Storage is not available in this context'));
+        cb(Boom.preconditionFailed('Storage is not available in this context'));
     }
     
-    function writePath(path, data, options, cb) {
+    function writeToPath(path, data, options, cb) {
         var Boom = require('boom');
         var Request = require('request');
         
