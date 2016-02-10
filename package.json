@@ -1,9 +1,10 @@
 {
   "name": "webtask-tools",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Tools to facilitate working in a webtask context",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint **/*.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/auth0/webtask-tools/issues"
   },
-  "homepage": "https://github.com/auth0/webtask-tools#readme"
+  "homepage": "https://github.com/auth0/webtask-tools#readme",
+  "devDependencies": {
+    "eslint": "^2.0.0-rc.0"
+  }
 }
