@@ -1,6 +1,6 @@
 {
   "name": "webtask-tools",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Tools to facilitate working in a webtask context",
   "main": "./lib/index.js",
   "scripts": {
@@ -26,6 +26,7 @@
     "eslint": "^2.0.0-rc.0"
   },
   "dependencies": {
+    "boom": "^2.7.2",
     "jsonwebtoken": "^5.7.0",
     "superagent": "^1.8.3"
   }
