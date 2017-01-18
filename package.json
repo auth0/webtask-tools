@@ -28,7 +28,8 @@
   "dependencies": {
     "boom": "^2.7.2",
     "jsonwebtoken": "^5.7.0",
-    "superagent": "^1.8.3",
-    "pug": "^0.1.0"
+    "pug": "^0.1.0",
+    "safe-buffer": "^5.0.1",
+    "superagent": "^1.8.3"
   }
 }
