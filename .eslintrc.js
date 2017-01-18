@@ -7,10 +7,12 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "rules": {
-       "indent": ["warn", 4],
+       "indent": [1, 4],
        "global-require": 0,
        "camelcase": 0,
        "curly": 0,
-       "no-undef": ["error"],
+       "no-undef": [2],
+       "no-unused-vars": [1],
+       "semi": [1, "always"],
     }
 };
