@@ -1,6 +1,6 @@
 {
   "name": "webtask-tools",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Tools to facilitate working in a webtask context",
   "main": "./lib/index.js",
   "scripts": {
@@ -25,6 +25,7 @@
   "devDependencies": {},
   "dependencies": {
     "boom": "^2.7.2",
+    "edge": "^7.10.1",
     "jsonwebtoken": "^5.7.0",
     "pug": "^0.1.0",
     "safe-buffer": "^5.0.1",
