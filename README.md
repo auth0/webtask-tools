@@ -15,7 +15,7 @@ var Express = require('express');
 var Webtask = require('webtask-tools');
 var server = Express();
 
-server.use(require('body-parser'));
+server.use(require('body-parser').json());
 
 // Create
 server.post('/', function (req, res) {
