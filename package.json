@@ -1,6 +1,6 @@
 {
   "name": "webtask-tools",
-  "version": "3.3.0",
+  "version": "3.3.1",
   "description": "Tools to facilitate working in a webtask context",
   "main": "./lib/index.js",
   "scripts": {
@@ -28,6 +28,6 @@
     "jsonwebtoken": "^5.7.0",
     "pug": "^0.1.0",
     "safe-buffer": "^5.0.1",
-    "superagent": "^1.8.3"
+    "superagent": "^3.8.3"
   }
 }
